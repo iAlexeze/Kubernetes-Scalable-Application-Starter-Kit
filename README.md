@@ -96,24 +96,35 @@ To deploy the metrics components, run:
 
 The `dashboard` directory contains the `dash.yml` file, which allows you to deploy the Kubernetes Dashboard. The Dashboard provides a web-based user interface to monitor and manage your cluster. Once deployed, you can access the Dashboard and gain insights into your cluster's health and performance.
 
-To deploy the Kubernetes Dashboard, run:
+### *Follow these steps tp setup your dashboard*
+
+**STEP I** - To deploy the Kubernetes Dashboard, run:
 
         kubectl apply -f dashboard/dash.yml
 
-To generate login token, run:
+This will create a `Kubernetes-dahboard namespace`, `admin-user` serviceaccount with cluster-admin privilege, as well as other necessary objects.
+
+**STEP II** - To generate login token, run:
 
         kubectl token create admin-user -n kubernetes-dashboard
 
-To expose the Kubernetes Dashboard to external access, run:
+You can also specify the desired duration of the token with the `duration` flag. To do this, run:
+
+        kubectl token create admin-user -n kubernetes-dashboard --duration 60m
+
+This will keep the login token active for `60minutes`
+
+**STEP III** - To expose the Kubernetes Dashboard to external access, run:
 
         kubectl proxy &
 
-To access the Kubernetes Dashboard, copy and paste this url on your favorite browser:
+**STEP IV** - To access the Kubernetes Dashboard, copy and paste this url on your favorite browser:
 
         http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/workloads?namespace=_all
 
 
 <p align="center">
+  <strong style="text-align:center;"> Congratulations!!! You have setup your Kubernetes Dashboard successfully</strong>
   <strong><em style="text-align:center;">😃😃  ENJOY THE BEAUTIFUL VIEW   😃😃</em></strong>
   <br>
 </p>
