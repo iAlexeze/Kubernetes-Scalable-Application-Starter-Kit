@@ -69,10 +69,12 @@ The output should look like this:
         my-cluster                 Ready    <none>          31d   v1.26.3
         my-cluster2                Ready    <none>          31d   v1.26.3
 
+
 <p align="center">
   <strong><em style="text-align:center;">ENJOY 😃</em></strong>
   <br>
 </p>
+
 
 ## MetalLB<a name="metallb"></a>
 
@@ -110,10 +112,12 @@ To access the Kubernetes Dashboard, copy and paste this url on your favorite bro
 
         http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/workloads?namespace=_all
 
+
 <p align="center">
   <strong><em style="text-align:center;">😃😃  ENJOY THE BEAUTIFUL VIEW   😃😃</em></strong>
   <br>
 </p>
+
 
 ## Pod Configuration<a name="pod-configuration"></a>
 
