@@ -30,7 +30,7 @@ To get started with this starter kit, follow these steps:
         git clone https://github.com/your-username/kubernetes-scalable-app-starter-kit.git
 
 
-2. Ensure that you have a Kubernetes cluster up and running. If you don't have a cluster, you can create one using [Kind](https://kind.sigs.k8s.io/). I have provided a configuration to setup a multi-node [Kind Kubernetes Cluster](#cluster-configuration)
+2. Ensure that you have a Kubernetes cluster up and running. If you don't have a cluster, you can create one using [Kind](https://kind.sigs.k8s.io/). I have provided a configuration to setup a multi-node [Kind Kubernetes Cluster](#cluster-configuration).
 
 3. Navigate to the cloned repository:
 
