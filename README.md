@@ -146,9 +146,7 @@ Contributions are welcome! If you have any ideas, suggestions, or improvements f
 
 ## License<a name="license"></a>
 
-This project is licensed under the [MIT License](LICENSE).
-
-Let's Connect,
+This project is licensed under the [MIT License](license).
 
 Let's Connect,
 - <a href="https://github.com/ialexeze" target="_blank">GitHub</a>
