@@ -149,6 +149,8 @@ Contributions are welcome! If you have any ideas, suggestions, or improvements f
 This project is licensed under the [MIT License](LICENSE).
 
 Let's Connect,
-- [GitHub](https://github.com/ialexeze){:target="_blank"}
-- [LinkedIn](https://linkedin.com/in/alexeze){:target="_blank"}
-- [Twitter](https://twitter.com/ialexeze){:target="_blank"}
+
+Let's Connect,
+- <a href="https://github.com/ialexeze" target="_blank">GitHub</a>
+- <a href="https://linkedin.com/in/alexeze" target="_blank">LinkedIn</a>
+- <a href="https://twitter.com/ialexeze" target="_blank">Twitter</a>
