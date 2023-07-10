@@ -153,7 +153,7 @@ This will create a pod and its Loadbalancer service for external access.
 
 The `replicaset` directory provides example ReplicaSet files, such as `nginx_rs.yml`, which showcase the usage of ReplicaSets in Kubernetes. ReplicaSets ensure that a specified number of pod replicas are running at any given time, allowing you to maintain high availability and scalability for your application.
 
-To deploy a ReplicaSet, run:
+- To deploy a ReplicaSet, run:
 
        kubectl apply -f replicaset/nginx_rs.yml
 
@@ -167,7 +167,7 @@ This will create a replicaset, corresponding number of specified pods, and its L
 
 The `deployment` directory contains example deployment files, such as `nginx_deploy.yml`, which demonstrate how to deploy applications on Kubernetes. Modify these files to define your application's deployment strategy, including the number of replicas, resource limits, and networking settings.
 
-To deploy the NGINX application, run:
+- To deploy the NGINX application, run:
 
         kubectl apply -f deployment/nginx_deploy.yml
 
