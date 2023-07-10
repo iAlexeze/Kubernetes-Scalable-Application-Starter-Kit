@@ -9,8 +9,11 @@ Welcome to the Kubernetes Scalable Application Starter Kit repository! This repo
 - [Cluster Configuration](#cluster-configuration)
 - [MetalLB](#metallb)
 - [Metrics](#metrics)
+- [Dashboard](#dashboard)
 - [Pod Configuration](#pod-configuration)
 - [ReplicaSet](#replicaset)
+- [Deployment](#deployment)
+- [Horizontal Pod Autoscaler](#horizontal-pod-autoscaler)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -45,29 +48,15 @@ To get started with this starter kit, follow these steps:
 
 The `cluster` directory contains the `cluster-config.yaml` file, which holds the configuration for your Kubernetes cluster. Modify this file to define the desired state of your cluster, including settings such as network policies, authentication, and RBAC.
 
-## Dashboard<a name="dashboard"></a>
+To create your cluster, run:
 
-The `dashboard` directory contains the `dash.yml` file, which allows you to deploy the Kubernetes Dashboard. The Dashboard provides a web-based user interface to monitor and manage your cluster. Once deployed, you can access the Dashboard and gain insights into your cluster's health and performance.
+        kind create cluster --name=<cluster-name> --config=<path/to/config.yaml>
 
-To deploy the Kubernetes Dashboard, run:
+In this case, run:
 
-        kubectl apply -f dashboard/dash.yml
+        kind create cluster --name=my-cluster --config=cluster/config.yaml>
 
-
-## Deployment<a name="deployment"></a>
-
-The `deployment` directory contains example deployment files, such as `nginx_deploy.yml`, which demonstrate how to deploy applications on Kubernetes. Modify these files to define your application's deployment strategy, including the number of replicas, resource limits, and networking settings.
-
-To deploy the NGINX application, run:
-
-        kubectl apply -f deployment/nginx_deploy.yml
-
-
-## Horizontal Pod Autoscaler<a name="horizontal-pod-autoscaler"></a>
-
-The `hpa` directory contains two important files: `hpa_config.yaml` and `load_generator.sh`. The `hpa_config.yaml` file defines the autoscaling behavior for your application based on CPU utilization or other metrics. The `load_generator.sh` script helps simulate load on your application, allowing you to observe the autoscaling in action.
-
-To configure the Horizontal Pod Autoscaler, modify the `hpa_config.yaml` file according to your requirements.
+This will create your multi-node Kubernetes cluster = `1 control-plane` and `2 worker nodes`.
 
 ## MetalLB<a name="metallb"></a>
 
@@ -77,7 +66,6 @@ To deploy MetalLB in your cluster, run:
 
        kubectl apply -f metallb/metallb-native.yaml
 
-
 ## Metrics<a name="metrics"></a>
 
 The `metrics` directory contains the `components.yaml` file, which sets up the necessary components for collecting and exporting metrics from your cluster. These metrics can be visualized and analyzed using various monitoring solutions, allowing you to gain insights into the performance and health of your applications.
@@ -85,6 +73,28 @@ The `metrics` directory contains the `components.yaml` file, which sets up the n
 To deploy the metrics components, run:
 
        kubectl apply -f metrics/components.yaml
+
+## Dashboard<a name="dashboard"></a>
+
+The `dashboard` directory contains the `dash.yml` file, which allows you to deploy the Kubernetes Dashboard. The Dashboard provides a web-based user interface to monitor and manage your cluster. Once deployed, you can access the Dashboard and gain insights into your cluster's health and performance.
+
+To deploy the Kubernetes Dashboard, run:
+
+        kubectl apply -f dashboard/dash.yml
+
+To generate login token, run:
+
+        kubectl token create admin-user -n kubernetes-dashboard
+
+To expose the Kubernetes Dashboard to external access, run:
+
+        kubectl proxy &
+
+To access the Kubernetes Dashboard, copy and paste this url on your favorite browser:
+
+        http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/workloads?namespace=_all
+
+### *ENJOY THE VIEW* 
 
 ## Pod Configuration<a name="pod-configuration"></a>
 
@@ -94,6 +104,8 @@ To deploy a pod, run:
 
        kubectl apply -f pod/nginx_pod.yml
 
+This will create a pod and its Loadbalancer service for external access.
+
 ## ReplicaSet<a name="replicaset"></a>
 
 The `replicaset` directory provides example ReplicaSet files, such as `nginx_rs.yml`, which showcase the usage of ReplicaSets in Kubernetes. ReplicaSets ensure that a specified number of pod replicas are running at any given time, allowing you to maintain high availability and scalability for your application.
@@ -102,6 +114,30 @@ To deploy a ReplicaSet, run:
 
        kubectl apply -f replicaset/nginx_rs.yml
 
+This will create a replicaset, corresponding number of specified pods, and its Loadbalancer service for external access.
+
+## Deployment<a name="deployment"></a>
+
+The `deployment` directory contains example deployment files, such as `nginx_deploy.yml`, which demonstrate how to deploy applications on Kubernetes. Modify these files to define your application's deployment strategy, including the number of replicas, resource limits, and networking settings.
+
+To deploy the NGINX application, run:
+
+        kubectl apply -f deployment/nginx_deploy.yml
+
+This will create a Deployment object, a replicaset, corresponding number of specified pods, and its Loadbalancer service for external access.
+
+## Horizontal Pod Autoscaler<a name="horizontal-pod-autoscaler"></a>
+
+The `hpa` directory contains two important files: `hpa_config.yaml` and `load_generator.sh`. The `hpa_config.yaml` file defines the autoscaling behavior for your application based on CPU utilization or other metrics. The `load_generator.sh` script helps simulate load on your application, allowing you to observe the autoscaling in action.
+
+To deploy the Horizontal Pod Autoscaler, run:
+
+        kubectl apply -f hpa/hpa_config.yaml
+        ./load_generator.sh
+
+
+You can also configure the Horizontal Pod Autoscaler, by modifying the `hpa_config.yaml` file according to your requirements.
+
 ## Contributing<a name="contributing"></a>
 
 Contributions are welcome! If you have any ideas, suggestions, or improvements for this starter kit, please feel free to open issues or submit pull requests.
@@ -109,3 +145,10 @@ Contributions are welcome! If you have any ideas, suggestions, or improvements f
 ## License<a name="license"></a>
 
 This project is licensed under the [MIT License](LICENSE).
+
+Let's Connect,
+### [GitHub](github.com/ialexeze)
+### [LinkedIn](linkedin.com/in/alexeze)
+### [Twitter](twitter.com/ialexeze)
+
+
