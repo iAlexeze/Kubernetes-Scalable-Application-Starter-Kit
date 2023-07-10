@@ -94,7 +94,9 @@ To access the Kubernetes Dashboard, copy and paste this url on your favorite bro
 
         http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/workloads?namespace=_all
 
-### *ENJOY THE VIEW* 
+
+###                                     *ENJOY THE BEAUTIFUL VIEW* 
+
 
 ## Pod Configuration<a name="pod-configuration"></a>
 
@@ -147,8 +149,6 @@ Contributions are welcome! If you have any ideas, suggestions, or improvements f
 This project is licensed under the [MIT License](LICENSE).
 
 Let's Connect,
-### [GitHub](github.com/ialexeze)
-### [LinkedIn](linkedin.com/in/alexeze)
-### [Twitter](twitter.com/ialexeze)
-
-
+- [GitHub](https://github.com/ialexeze){:target="_blank"}
+- [LinkedIn](https://linkedin.com/in/alexeze){:target="_blank"}
+- [Twitter](https://twitter.com/ialexeze){:target="_blank"}
