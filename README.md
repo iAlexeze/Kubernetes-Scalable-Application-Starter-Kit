@@ -56,7 +56,22 @@ In this case, run:
 
         kind create cluster --name=my-cluster --config=cluster/config.yaml>
 
-This will create your multi-node Kubernetes cluster = `1 control-plane` and `2 worker nodes`.
+This will create your multi-node Kubernetes cluster named `my-cluster`, with `1 control-plane` and `2 worker nodes`.
+
+To confirm the availability and readiness of the nodes, run:
+
+        kubectl get nodes
+
+The output should look like this:
+
+        NAME                       STATUS   ROLES           AGE   VERSION
+        my-cluster-control-plane   Ready    control-plane   31d   v1.26.3
+        my-cluster                 Ready    <none>          31d   v1.26.3
+        my-cluster2                Ready    <none>          31d   v1.26.3
+
+<center>
+*ENJOY* 😃
+</center>
 
 ## MetalLB<a name="metallb"></a>
 
@@ -94,9 +109,9 @@ To access the Kubernetes Dashboard, copy and paste this url on your favorite bro
 
         http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/workloads?namespace=_all
 
-
-###                                     *ENJOY THE BEAUTIFUL VIEW* 
-
+<center>
+### 😃😃  ENJOY THE BEAUTIFUL VIEW   😃😃
+</center>
 
 ## Pod Configuration<a name="pod-configuration"></a>
 
