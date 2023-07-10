@@ -139,11 +139,15 @@ This will keep the login token active for `60minutes`
 
 The `pod` directory holds example pod configuration files, such as `nginx_pod.yml`, which demonstrate how to define and deploy individual pods on Kubernetes. You can modify these files to create pods for your specific application components and customize them according to your requirements.
 
-To deploy a pod, run:
+- To deploy a pod, run:
 
        kubectl apply -f pod/nginx_pod.yml
 
 This will create a pod and its Loadbalancer service for external access.
+
+- To display all running pods, run:
+
+        kubectl get pods
 
 ## ReplicaSet<a name="replicaset"></a>
 
@@ -155,6 +159,10 @@ To deploy a ReplicaSet, run:
 
 This will create a replicaset, corresponding number of specified pods, and its Loadbalancer service for external access.
 
+- To display all running replicasets (rs), run:
+
+        kubectl get rs
+
 ## Deployment<a name="deployment"></a>
 
 The `deployment` directory contains example deployment files, such as `nginx_deploy.yml`, which demonstrate how to deploy applications on Kubernetes. Modify these files to define your application's deployment strategy, including the number of replicas, resource limits, and networking settings.
@@ -165,6 +173,10 @@ To deploy the NGINX application, run:
 
 This will create a Deployment object, a replicaset, corresponding number of specified pods, and its Loadbalancer service for external access.
 
+- To display all running deployments (deploy), run:
+
+        kubectl get deploy
+
 ## Horizontal Pod Autoscaler<a name="horizontal-pod-autoscaler"></a>
 
 The `hpa` directory contains two important files: `hpa_config.yaml` and `load_generator.sh`. The `hpa_config.yaml` file defines the autoscaling behavior for your application based on CPU utilization or other metrics. The `load_generator.sh` script helps simulate load on your application, allowing you to observe the autoscaling in action.
@@ -173,7 +185,7 @@ To deploy the Horizontal Pod Autoscaler, run:
 
         kubectl apply -f hpa/hpa_config.yaml
         ./load_generator.sh
-        
+
 
 
 You can also configure the Horizontal Pod Autoscaler, by modifying the `hpa_config.yaml` file according to your requirements.
