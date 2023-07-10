@@ -96,13 +96,15 @@ To deploy the metrics components, run:
 
 The `dashboard` directory contains the `dash.yml` file, which allows you to deploy the Kubernetes Dashboard. The Dashboard provides a web-based user interface to monitor and manage your cluster. Once deployed, you can access the Dashboard and gain insights into your cluster's health and performance.
 
-### *Follow these steps tp setup your dashboard*
+### *Follow these steps to setup your dashboard*
+
 
 **STEP I** - To deploy the Kubernetes Dashboard, run:
 
         kubectl apply -f dashboard/dash.yml
 
 This will create a `Kubernetes-dahboard namespace`, `admin-user` serviceaccount with cluster-admin privilege, as well as other necessary objects.
+
 
 **STEP II** - To generate login token, run:
 
@@ -114,9 +116,11 @@ You can also specify the desired duration of the token with the `duration` flag.
 
 This will keep the login token active for `60minutes`
 
+
 **STEP III** - To expose the Kubernetes Dashboard to external access, run:
 
         kubectl proxy &
+
 
 **STEP IV** - To access the Kubernetes Dashboard, copy and paste this url on your favorite browser:
 
@@ -125,6 +129,7 @@ This will keep the login token active for `60minutes`
 
 <p align="center">
   <strong style="text-align:center;"> Congratulations!!! You have setup your Kubernetes Dashboard successfully</strong>
+  <br>
   <strong><em style="text-align:center;">😃😃  ENJOY THE BEAUTIFUL VIEW   😃😃</em></strong>
   <br>
 </p>
@@ -168,6 +173,7 @@ To deploy the Horizontal Pod Autoscaler, run:
 
         kubectl apply -f hpa/hpa_config.yaml
         ./load_generator.sh
+        
 
 
 You can also configure the Horizontal Pod Autoscaler, by modifying the `hpa_config.yaml` file according to your requirements.
