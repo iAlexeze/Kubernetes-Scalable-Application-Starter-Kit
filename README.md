@@ -1,4 +1,5 @@
 # Kubernetes Scalable Application Starter Kit
+![GitHub](https://img.shields.io/badge/GitHub-Kubernetes--Scalable--Application--Starter--Kit-red) ![IALEX](https://img.shields.io/badge/IALEX-blue) ![K8s](https://img.shields.io/badge/Kubernetes--Place-marron)
 
 Welcome to the Kubernetes Scalable Application Starter Kit repository! This repository provides a comprehensive set of files and configurations to help you quickly deploy and manage scalable applications on Kubernetes. Whether you're a developer, system administrator, or someone interested in building robust application infrastructures, this starter kit is your gateway to success.
 
